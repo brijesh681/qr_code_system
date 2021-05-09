@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(=q9n9%7ymvf5s)jvu3oq3s_zx=()99nmu7#)-p)h-q$j488_-'
+SECRET_KEY = os.environ['secret_key']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["qrcode8006.herokuapp.com","localhost"]
 
 
 # Application definition
@@ -54,7 +54,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
